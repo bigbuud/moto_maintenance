@@ -1,0 +1,24 @@
+register_maintenance:
+  target:
+    entity:
+      integration: moto_onderhoud
+      domain: sensor
+  fields:
+    km:
+      required: false
+      example: 12500
+      selector:
+        number:
+          min: 0
+          max: 1000000
+          mode: box
+          unit_of_measurement: km
+    date:
+      required: false
+      selector:
+        date:
+    note:
+      required: false
+      example: "Motul 7100 10W40, filter HF204, 85 euro"
+      selector:
+        text:

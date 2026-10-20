@@ -1,0 +1,12 @@
+{
+  "domain": "moto_onderhoud",
+  "name": "Moto Onderhoud",
+  "codeowners": ["@bigbuud"],
+  "config_flow": true,
+  "documentation": "https://github.com/bigbuud/moto_maintenance",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/bigbuud/moto_maintenance/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

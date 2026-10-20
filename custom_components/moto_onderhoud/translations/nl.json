@@ -1,0 +1,50 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Motor toevoegen",
+        "description": "Geef je motor een naam en vul de huidige kilometerstand in. De notify-service is optioneel, bv. `notify.mobile_app_jouw_gsm`.",
+        "data": {
+          "name": "Naam",
+          "odometer": "Huidige kilometerstand",
+          "notify_service": "Notify-service voor meldingen"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Deze motor is al toegevoegd."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opties",
+        "data": {
+          "notify_service": "Notify-service voor meldingen (leeg = geen)",
+          "warn_km": "Waarschuwen bij minder dan (km)",
+          "warn_days": "Waarschuwen bij minder dan (dagen)"
+        }
+      }
+    }
+  },
+  "services": {
+    "register_maintenance": {
+      "name": "Onderhoud registreren",
+      "description": "Registreer uitgevoerd onderhoud voor een taak.",
+      "fields": {
+        "km": {
+          "name": "Kilometerstand",
+          "description": "Leeg laten om de huidige kilometerstand te gebruiken."
+        },
+        "date": {
+          "name": "Datum",
+          "description": "Leeg laten voor vandaag."
+        },
+        "note": {
+          "name": "Notitie",
+          "description": "Bv. type filter, merk olie, prijs. Leeg laten om de vorige notitie te behouden."
+        }
+      }
+    }
+  }
+}

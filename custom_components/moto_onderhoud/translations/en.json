@@ -1,0 +1,50 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add motorcycle",
+        "description": "Name your motorcycle and enter the current odometer reading. The notify service is optional, e.g. `notify.mobile_app_your_phone`.",
+        "data": {
+          "name": "Name",
+          "odometer": "Current odometer",
+          "notify_service": "Notify service for alerts"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "This motorcycle has already been added."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "data": {
+          "notify_service": "Notify service for alerts (empty = none)",
+          "warn_km": "Warn when less than (km) remain",
+          "warn_days": "Warn when less than (days) remain"
+        }
+      }
+    }
+  },
+  "services": {
+    "register_maintenance": {
+      "name": "Register maintenance",
+      "description": "Register completed maintenance for a task.",
+      "fields": {
+        "km": {
+          "name": "Odometer",
+          "description": "Leave empty to use the current odometer."
+        },
+        "date": {
+          "name": "Date",
+          "description": "Leave empty for today."
+        },
+        "note": {
+          "name": "Note",
+          "description": "E.g. filter type, oil brand, price. Leave empty to keep the previous note."
+        }
+      }
+    }
+  }
+}

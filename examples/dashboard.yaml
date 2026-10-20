@@ -1,0 +1,16 @@
+# Voorbeeld-view voor een dashboard (Ruwe configuratie-editor, onder 'views:').
+# Het markdown-overzicht werkt zonder entiteitsnamen aan te passen.
+# Voor knoppen en notities: voeg een Entiteiten-kaart toe en kies de entiteiten
+# van je motor (of open het apparaat 'Motor' onder Instellingen > Apparaten).
+title: Moto
+path: moto
+icon: mdi:motorbike
+cards:
+  - type: markdown
+    title: Onderhoud
+    content: |
+      | Taak | Status | km | dagen | Laatst | Notitie |
+      |---|---|---|---|---|---|
+      {%- for e in integration_entities('moto_onderhoud') if e.startswith('sensor.') %}
+      | {{ state_attr(e, 'friendly_name') }} | {{ states(e) }} | {{ state_attr(e, 'km_remaining') }} | {{ state_attr(e, 'days_remaining') }} | {{ state_attr(e, 'last_date') }} | {{ state_attr(e, 'note') }} |
+      {%- endfor %}
